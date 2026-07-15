@@ -42,6 +42,9 @@ public class OrderService {
 
         PaymentResult result = paymentService.processPayment(order.getTotalAmount());
 
+        // C2 BUG: 类型不匹配 — paymentResult 被声明为 PaymentResult 但赋值了 String
+        String paymentResult = result;  // ← C2: incompatible types
+
         if (result.isSuccess()) {
             order.setStatus("PAID");
             orderDao.updateStatus(orderId, "PAID");

@@ -1,7 +1,8 @@
 package com.eshop.dao;
 
 import com.eshop.model.User;
-import java.util.List;
+
+// C1: 故意遗漏 import java.util.List
 
 /**
  * 用户数据访问对象。
