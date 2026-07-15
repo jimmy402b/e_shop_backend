@@ -26,8 +26,7 @@ public class ProductController {
      * 正确应为: return productService.searchProducts(keyword);
      */
     public List<Product> searchProducts(String keyword) {
-        // C3: productDAO 从未定义，searchByName 不是要调用的方法
-        return productDAO.searchByName(keyword);  // ← C3: cannot find symbol
+        return productService.searchProducts(keyword);
     }
 
     public void addProduct(Product product) {
