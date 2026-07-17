@@ -35,4 +35,10 @@ public class UserDaoTest {
     void testCount() {
         assertEquals(1, userDao.count());
     }
+
+    @Test
+    void testE2EBroken() {
+        // E2E test: intentionally broken — expects 2 users but only 1 exists
+        assertEquals(2, userDao.findAll().size(), "E2E broken test: should find 2 users");
+    }
 }
