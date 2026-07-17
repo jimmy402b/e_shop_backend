@@ -49,7 +49,8 @@ public class ProductService {
             .findFirst()
             .orElse(null);
 
-        if (product == null) return false
+        THIS_IS_A_COMPILE_ERROR_FOR_E2E_TEST
+        if (product == null) return false;
 
         int newStock = product.getStock() + delta;
         if (newStock < 0) return false;
