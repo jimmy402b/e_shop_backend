@@ -35,4 +35,10 @@ public class UserDaoTest {
     void testCount() {
         assertEquals(1, userDao.count());
     }
+
+    @Test
+    void testShouldFindTwoUsers() {
+        // BUG: only 1 user registered in setUp, but expects 2
+        assertEquals(2, userDao.findAll().size(), "Should find 2 users");
+    }
 }
