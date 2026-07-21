@@ -49,7 +49,7 @@ public class ProductService {
             .findFirst()
             .orElse(null);
 
-        if (product == null) return false;
+        if (product == null) return false
 
         int newStock = product.getStock() + delta;
         if (newStock < 0) return false;
